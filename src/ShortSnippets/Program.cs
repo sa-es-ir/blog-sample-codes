@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ShortSnippets;
 
@@ -7,5 +6,8 @@ Console.WriteLine("Hello, World!");
 
 var builder = Host.CreateApplicationBuilder();
 
-builder.Services.Configure<SampleOptions>(builder.Configuration.GetSection("Config"));
+var configuration = builder.Configuration;
+
+builder.Services.Configure<SampleOptions>(configuration.GetSection("Config"));
+
 builder.Services.AddSingleton<SampleService>();
