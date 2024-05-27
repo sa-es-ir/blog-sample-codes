@@ -8,7 +8,7 @@ namespace ShortSnippets.UnitTest
         [Fact]
         public void CallGetMessageMethod()
         {
-            var options = Options.Create(new SampleOptions
+            IOptions<SampleOptions> options = Options.Create(new SampleOptions
             {
                 Message = "Hello, World!"
             });
